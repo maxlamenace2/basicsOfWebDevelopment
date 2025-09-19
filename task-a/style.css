@@ -4,8 +4,11 @@ Date: 2025-09-19
 */
 
 body {
-  background-color: #000000; /* couleur de fond */
+  background-color: #1e1e1e; /* exemple : fond sombre */
   font-family: Arial, sans-serif;
+  margin: 0;
+  text-align: center; /* centre horizontalement */
+  padding-top: 40px;  /* espace depuis le haut */
 }
 
 h1 {
