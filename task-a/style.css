@@ -1,17 +1,18 @@
+/*
+Author: Gautier-Grall Maxence 
+Date: 2025-09-19 
+*/
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
-    padding: 50px;
+  background-color: #f0f0f0; /* couleur de fond */
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-    color: #007acc;
-    font-size: 2.5em;
+  color: darkblue;
+  font-size: 36px;
 }
 
 p {
-    font-size: 1.2em;
-    margin-top: 20px;
+  color: #333333;
 }
