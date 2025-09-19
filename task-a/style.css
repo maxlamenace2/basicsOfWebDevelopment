@@ -4,15 +4,15 @@ Date: 2025-09-19
 */
 
 body {
-  background-color: #3c1313; /* couleur de fond */
+  background-color: #000000; /* couleur de fond */
   font-family: Arial, sans-serif;
 }
 
 h1 {
-  color: darkblue;
+  color: rgb(253, 253, 253);
   font-size: 36px;
 }
 
 p {
-  color: #333333;
+  color: #faefef;
 }
