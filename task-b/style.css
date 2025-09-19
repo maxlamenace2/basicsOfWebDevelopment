@@ -1,0 +1,51 @@
+/*
+Author: Gautier-Grall Maxence
+Date: 2025-09-19 
+*/
+
+body {
+  background-color: #f4f4f9; 
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2 {
+  color: #34495e;
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+p {
+  color: #333333;
+  font-size: 18px;
+}
+
+
+ul {
+  list-style-type: square;
+  margin-left: 40px;
+}
+
+
+ol {
+  list-style-type: decimal-leading-zero;
+  margin-left: 40px;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
