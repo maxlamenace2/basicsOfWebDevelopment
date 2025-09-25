@@ -12,11 +12,12 @@ body {
   text-align: center;
 }
 
-
 h1 {
   font-size: 2.5em;
   margin-bottom: 30px;
-  color: #00bcd4; 
+  color: #c1cbcc; 
+  text-decoration: underline;
+  text-decoration-color: #ff9800;
 }
 
 img {
@@ -42,7 +43,6 @@ p {
   padding: 15px 20px;
   border-radius: 10px;
 }
-
 
 a {
   color: #ff9800;
