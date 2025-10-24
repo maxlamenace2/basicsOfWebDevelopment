@@ -3,14 +3,7 @@ Author: Maxence Gautier-Grall
 Date: 2025-10-21
 */
 
-/* COLOR GUIDELINES
-   - Page background: very light gray (#f6f8fb)
-   - Main text: dark gray (#1f2937)
-   - Header background: deep blue (#273e73), text white
-   - Table header row: same deep blue, text white
-   - Table rows: alternate white (#fff) / light blue (#eef3ff)
-   - Borders: light gray (#d0d7e2)
-*/
+
 
 :root {
   /* Typographic scale via rem for easy scaling */
