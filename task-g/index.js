@@ -12,21 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     clearErrors();
 
-    
     const timestamp = new Date().toLocaleString();
-   
     
     document.getElementById("timestamp").value = timestamp;
 
-
-    
     const fullName = document.getElementById("fullName").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const birthDateString = document.getElementById("birthDate").value.trim();
     const accepted = form.querySelector('input[name="terms"]:checked') ? "✅" : "❌";
 
-    
     let valid = true;
 
     //if (fullName.length < 2) {
@@ -34,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       //valid = false;
     //}
 
-    
     //NAME
     if (fullName === "") 
     {
@@ -101,12 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
         valid = false;
     }
 
-
-
-
     if (!valid) return;
 
-    
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${timestamp}</td>
