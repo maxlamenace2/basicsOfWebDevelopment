@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     const timestamp = new Date().toLocaleString();
+   
+    
+    document.getElementById("timestamp").value = timestamp;
+
 
     
     const fullName = document.getElementById("fullName").value.trim();
@@ -86,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-  function checkAge(dateString, minAge) {
+  /*function checkAge(dateString, minAge) {
     const p = dateString.split("/");
     if (p.length !== 3) return false;
     const birth = new Date(p[2], p[1] - 1, p[0]);
@@ -100,6 +104,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ) age--;
 
     return age >= minAge;
+  }*/
+  function checkAge(dateString, minAge) {
+  const birth = new Date(dateString); // type=date donne format YYYY-MM-DD
+  if (isNaN(birth)) return false;
+
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  if (
+    today.getMonth() < birth.getMonth() ||
+    (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())
+  ) age--;
+
+  return age >= minAge;
   }
 
   function showError(id, msg) {
