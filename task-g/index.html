@@ -29,7 +29,7 @@
       <section class="controls" aria-label="Add row">
         <h2 class="controls-title">Add Information</h2>
 
-        <form id="addCourseForm">
+        <form id="addCourseForm" novalidate> <!-- novalidate est la pour epecher les message du navigateur si on a mal completer date (ici s'applique a tous)-->
 
             <input type="hidden" id="timestamp" name="timestamp">
 
@@ -37,7 +37,9 @@
                 <label for="fullName">Full name</label>
             </div>
             <div class="form-row">
-                <input id="fullName" name="fullName" type="text" required placeholder="e.g., Maxence Gautier-Grall">
+                <input id="fullName" name="fullName" type="text" placeholder="e.g., Maxence Gautier-Grall">
+                <!--<input id="fullName" name="fullName" type="text" required placeholder="e.g., Maxence Gautier-Grall"> 
+                j'ai enlevé riquired pour pas avoir le message de base quand y'a rien de complété-->
             </div>
             
 
@@ -45,7 +47,7 @@
                 <label for="email">Email</label>
             </div>
             <div class="form-row">
-                <input id="email" name="email" type="text" required placeholder="e.g., your@email.com">
+                <input id="email" name="email" type="text" placeholder="e.g., your@email.com">
             </div>
 
 
@@ -53,20 +55,14 @@
                 <label for="phone">Phone</label>
             </div>
             <div class="form-row">
-                <input id="phone" name="phone" type="text" required placeholder="e.g., +33 7 12 34 56 78">
+                <input id="phone" name="phone" type="text" placeholder="e.g., +33 7 12 34 56 78"> 
             </div>
 
-            <!--<div class="form-row">
-                <label for="birthDate">Birth date</label>
-            </div>
-            <div class="form-row">
-                <input id="birthDate" name="birthDate" type="text" required placeholder="dd/mm/yyyy">
-            </div>-->
             <div class="form-row">
                 <label for="birthDate">Birth date</label>
             </div>
-            <div class="form-row">
-                <input id="birthDate" name="birthDate" type="date" required>
+            <div class="form-row" > 
+                <input id="birthDate" name="birthDate" type="date">
             </div>
 
 

@@ -174,6 +174,17 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.form-row { display: flex; gap: 0.5rem; align-items: center; margin: 0.5rem 0; } /* pour la date */
+
+.form-row input[type="date"] {
+  flex: 1 1 auto;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+/* pour la date */ 
+
 /* Body cells */
 .table tbody td {
   padding: 0.6rem 0.75rem;

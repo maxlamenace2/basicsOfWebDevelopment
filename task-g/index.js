@@ -35,24 +35,63 @@ document.addEventListener("DOMContentLoaded", () => {
     //}
 
     
+    //NAME
+    if (fullName === "") 
+    {
+        showError("fullName", "Please enter your full name.");
+        valid = false;
+    } 
+    else 
+    {
+        const nameParts = fullName.split(" ").filter(part => part.length >= 2);
 
-    const nameParts = fullName.split(" ").filter(part => part.length >= 2);
-
-    if (nameParts.length < 2) {
-    showError("fullName", "Please enter your full name (first and last), each with at least 2 characters.");
-    valid = false;
+        if (nameParts.length < 2) 
+        {
+            showError("fullName","Please enter your full name (first and last), each with at least 2 characters.");
+            valid = false;
+        }
     }
 
-    
-
-    if (!(email.includes("@") && email.includes("."))) {
+    //EMAIL
+    if (email === "") {
+    showError("email", "Please enter your email address.");
+    valid = false;
+    }
+    else if (!(email.includes("@") && email.includes("."))) {
       showError("email", "Invalid email format.");
       valid = false;
     }
-
-    if (!/^[+0-9\s]+$/.test(phone)) {
+    
+    //PHONE
+    if (phone === "") {
+    showError("phone", "Please enter your phone number.");
+    valid = false;
+    }
+    else if (!/^[+0-9\s]+$/.test(phone)) {
       showError("phone", "Phone must contain digits.");
       valid = false;
+    }
+
+    
+    //DATE
+    if (birthDateString === "") 
+    {
+        showError("birthDate", "Please enter your birth date.");
+        valid = false;
+    } 
+    else 
+    {
+        const parts = birthDateString.split("-");
+        if (parts.length !== 3 || parts.some(p => p.trim().length === 0)) 
+        {
+            showError("birthDate", "Please fill the entire date field (dd/mm/yyyy).");
+            valid = false;
+        }
+        else if (!checkAge(birthDateString, 13)) 
+        {
+            showError("birthDate", "You must be at least 13 years old.");
+            valid = false;
+        }
     }
 
     // Vérifier la checkbox "terms"
@@ -62,14 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         valid = false;
     }
 
-    if (!checkAge(birthDateString, 13)) {
-      showError("birthDate", "You must be at least 13 years old.");
-      valid = false;
-    }
 
-
-
-    
 
 
     if (!valid) return;
@@ -89,22 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 
+    // Effacer les erreurs dès qu'on tape dans un champ
+    form.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", clearErrors);
+    });
+
   
-  /*function checkAge(dateString, minAge) {
-    const p = dateString.split("/");
-    if (p.length !== 3) return false;
-    const birth = new Date(p[2], p[1] - 1, p[0]);
-    if (isNaN(birth)) return false;
-
-    const today = new Date();
-    let age = today.getFullYear() - birth.getFullYear();
-    if (
-      today.getMonth() < birth.getMonth() ||
-      (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())
-    ) age--;
-
-    return age >= minAge;
-  }*/
   function checkAge(dateString, minAge) {
   const birth = new Date(dateString); // type=date donne format YYYY-MM-DD
   if (isNaN(birth)) return false;
@@ -132,3 +154,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".error-message").forEach(e => e.remove());
   }
 });
+
+
