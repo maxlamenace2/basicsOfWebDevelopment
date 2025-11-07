@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+  <script src="index.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-blue-900 text-white py-6 text-center shadow">
+    <h1 class="text-2xl font-semibold">Registration page</h1>
+  </header>
+
+  <!-- CONTENT WRAPPER -->
+  <main class="max-w-6xl mx-auto p-4 sm:p-6">
+
+    <!-- TOP TWO BLOCKS -->
+    <div class="flex flex-col lg:flex-row gap-6 mb-6">
+
+      <!-- STUDENT INFO -->
+      <section class="flex-1 bg-white shadow border border-slate-300 rounded-lg p-4 sm:p-5">
+        <h2 class="text-lg sm:text-xl font-semibold mb-3">Information</h2>
+        <p class="font-medium text-base sm:text-lg">Maxence Gautier-Grall</p>
+        <p class="mt-1 text-sm sm:text-base text-slate-600">NITS24K</p>
+      </section>
+
+      <!-- FORM -->
+      <section class="flex-[2] bg-white shadow border border-slate-300 rounded-lg p-4 sm:p-5">
+        <h2 class="text-lg sm:text-xl font-semibold mb-3">Add Information</h2>
+
+        <form id="addCourseForm" class="space-y-4" novalidate>
+
+          <input type="hidden" id="timestamp" name="timestamp">
+
+          <!-- NAME -->
+          <label class="block">
+            <span class="text-sm font-medium">Full name</span>
+            <input id="fullName" name="fullName" type="text"
+              placeholder="e.g., Maxence Gautier-Grall"
+              class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </label>
+
+          <!-- EMAIL -->
+          <label class="block">
+            <span class="text-sm font-medium">Email</span>
+            <input id="email" name="email" type="text"
+              placeholder="e.g., your@email.com"
+              class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 text-sm sm:text-base focus:ring-2 focus:ring-blue-400"/>
+          </label>
+
+          <!-- PHONE -->
+          <label class="block">
+            <span class="text-sm font-medium">Phone</span>
+            <input id="phone" name="phone" type="text"
+              placeholder="e.g., +33 7 12 34 56 78"
+              class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 text-sm sm:text-base focus:ring-2 focus:ring-blue-400"/>
+          </label>
+
+          <!-- DATE -->
+          <label class="block">
+            <span class="text-sm font-medium">Birth date</span>
+            <input id="birthDate" name="birthDate" type="date"
+              class="mt-1 w-full border border-slate-300 rounded-md px-3 py-2 text-sm sm:text-base focus:ring-2 focus:ring-blue-400"/>
+          </label>
+
+          <!-- TERMS -->
+          <label class="flex items-center gap-2 text-sm sm:text-base">
+            <input type="checkbox" id="terms" name="terms" class="w-4 h-4">
+            <span>I accept the terms</span>
+          </label>
+
+          <!-- BUTTONS -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button id="addRowBtn" type="submit"
+              class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition text-sm sm:text-base">
+              Register
+            </button>
+            <button id="clearBtn" type="reset"
+              class="px-4 py-2 rounded-md border border-slate-400 bg-white hover:bg-slate-100 transition text-sm sm:text-base">
+              Clear
+            </button>
+          </div>
+
+        </form>
+      </section>
+
+    </div>
+
+    <!-- RESPONSIVE TABLE -->
+    <div class="bg-white border border-slate-300 rounded-lg shadow p-3 sm:p-4 overflow-x-auto text-center">
+      <table id="timetable" class="w-full text-xs sm:text-sm md:text-base border-collapse">
+        <thead>
+          <tr class="bg-blue-900 text-white">
+            <th class="text-left p-2 sm:p-3">Timestamp</th>
+            <th class="text-center p-2 sm:p-3">Full Name</th>
+            <th class="text-center p-2 sm:p-3">Email</th>
+            <th class="text-center p-2 sm:p-3">Phone</th>
+            <th class="text-center p-2 sm:p-3">Birth Date</th>
+            <th class="text-center p-2 sm:p-3">Accepted Terms</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300"></tbody>
+      </table>
+    </div>
+
+  </main>
+
+
+</body>
+</html>

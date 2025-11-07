@@ -58,13 +58,27 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //PHONE
     if (phone === "") {
-    showError("phone", "Please enter your phone number.");
-    valid = false;
-    }
-    else if (!/^[+0-9\s]+$/.test(phone)) {
-      showError("phone", "Phone must contain digits.");
+      showError("phone", "Please enter your phone number.");
       valid = false;
     }
+    else if (!/^[+0-9\s]+$/.test(phone)) {
+      showError("phone", "Phone must contain only digits and optional '+' or spaces.");
+      valid = false;
+    } 
+    else 
+    {
+      // Supprimer les espaces pour compter les chiffres
+      const digitCount = phone.replace(/\D/g, "").length;
+      if (digitCount <= 9) {
+        showError("phone", "Phone number must contain at least 9 digits.");
+        valid = false;
+      }
+    }
+    //else if (!/^[+0-9\s]+$/.test(phone)) {
+      //showError("phone", "Phone must contain digits.");
+      //valid = false;
+    //}
+
     
     //DATE
     if (birthDateString === "") 
@@ -98,13 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td>${timestamp}</td>
-      <td>${fullName}</td>
-      <td>${email}</td>
-      <td>${phone}</td>
-      <td>${birthDateString}</td>
-      <td>${accepted}</td>
-    `;
+      <td class="py-3">${timestamp}</td> 
+      <td class="py-3">${fullName}</td>
+      <td class="py-3">${email}</td>
+      <td class="py-3">${phone}</td>
+      <td class="py-3">${birthDateString}</td>
+      <td class="py-3">${accepted}</td>
+    `;//py-3 pour en bah de la page faire du padding entre chaque ligne que je rajoute pour pas etre collé
 
     tableBody.appendChild(row);
     form.reset();
@@ -133,8 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function showError(id, msg) {
     const el = document.getElementById(id);
     const div = document.createElement("div");
-    div.className = "error-message";
-    div.style.color = "red";
+    div.className = "error-message text-red-600 text-sm mt-1";
+    //div.className = "error-message"; // avant d'utiliser Tailwind
+    //div.style.color = "red";
     div.textContent = msg;
     el.insertAdjacentElement("afterend", div);
   }
