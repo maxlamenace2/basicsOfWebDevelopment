@@ -1,0 +1,132 @@
+/* ------------------- GLOBAL STYLE ------------------- */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+header {
+    background: #0a7cff;
+    padding: 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+/* ------------------- HERO SECTION ------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: url('https://images.unsplash.com/photo-1516826957135-700dedea6983?auto=format&fit=crop&w=1200&q=60')
+        center/cover;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 50px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 25px;
+    background: #0a7cff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #005fcc;
+}
+
+/* ------------------- ABOUT SECTION ------------------- */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ------------------- PRODUCT CARDS ------------------- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card h3 {
+    margin-top: 15px;
+}
+
+/* ------------------- FEATURES ------------------- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ------------------- FOOTER ------------------- */
+footer {
+    margin-top: 50px;
+    background: #111;
+    color: #ccc;
+    padding: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: #0a7cff;
+    text-decoration: none;
+}
