@@ -1,17 +1,17 @@
-/* ------------------- GLOBAL STYLE ------------------- */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #48566a; /* bleu très clair, doux pour les yeux */
+    background: #48566a; 
     color: #222;
 }
 
 header {
-    background: #9e9d9d; /* couleur existante */
+    background: #9e9d9d; 
     color: white;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between; /* texte à gauche, nav à droite */
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -35,7 +35,6 @@ header nav a {
 header nav a:hover {
     color: #0a7cff;
 }
-/* ------------------- HERO SECTION ------------------- */
 .hero {
     position: relative;
     display: flex;
@@ -104,7 +103,7 @@ header nav a:hover {
     }
 }
 
-/* ------------------- ABOUT SECTION ------------------- */
+
 section {
     padding: 60px 20px;
     text-align: center;
@@ -116,7 +115,7 @@ section {
     color:white;
 }
 
-/* ------------------- PRODUCT CARDS ------------------- */
+
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -141,7 +140,7 @@ section {
     margin-top: 15px;
 }
 
-/* ------------------- FEATURES ------------------- */
+
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,6 +148,17 @@ section {
     max-width: 900px;
     margin: auto;
     
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        margin-left: -80px; 
+    }
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
 }
 
 .feature {
@@ -164,7 +174,7 @@ section {
 #products h2{
     color:white;
 }
-/* ------------------- FOOTER ------------------- */
+
 footer {
     margin-top: 50px;
     background: #111;
@@ -188,16 +198,7 @@ html {
     scroll-margin-top: 120px;
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        margin-left: -80px; /* utilise margin au lieu de transform */
-    }
-    to {
-        opacity: 1;
-        margin-left: 0;
-    }
-}
+
 
 .card {
     opacity: 0;
@@ -206,50 +207,117 @@ html {
     animation-range: entry 0% cover 40%;
 }
 
-
-/* Conteneur de la carte */
-.flip-card {
-    perspective: 1000px;
-    cursor: pointer;
+.cta {
+    
+    background: #929dab;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 0;
+    margin-top: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-/* Cache le checkbox */
-.flip-card input {
-    display: none;
+.cta h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
-/* L’ensemble qui tourne */
-.flip-inner {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    border-radius: 12px;
+.cta p {
+    font-size: 20px;
+    margin-bottom: 25px;
 }
 
-/* Face avant */
-.flip-front, .flip-back {
-    backface-visibility: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
+.cta-btn {
     background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 15px;
+    color: black;
+    font-size: 18px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* Face arrière */
-.flip-back {
-    transform: rotateY(180deg);
+.cta-btn:hover {
+    background: #e6e6e6;
+    transform: translateY(-3px) scale(1.05);
 }
 
-/* Quand on clique → rotation */
-.flip-card input:checked + .flip-inner {
-    transform: rotateY(180deg);
+
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.feature {
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out both;
+  animation-timeline: view();          
+  animation-range: entry 0% cover 40%; 
+}
+
+
+.feature:nth-child(1) { animation-delay: 0.2s; }
+.feature:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3) { animation-delay: 0.6s; }
+
+
+
+''''
+/* --- Header responsive --- */
+
+/* Par défaut (desktop) */
+header nav {
+  display: flex;
+}
+
+/* Bouton hamburger caché sur grand écran */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  /* Cache la nav par défaut */
+  header nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #9e9d9d;
+    padding: 10px 0;
+  }
+
+  /* Affiche la nav quand active */
+  header nav.active {
+    display: flex;
+  }
+
+  /* Bouton hamburger visible */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  header nav a {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+
 
 
 
