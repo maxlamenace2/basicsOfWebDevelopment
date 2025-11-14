@@ -203,7 +203,7 @@ html {
     opacity: 0;
     animation: slideInLeft 0.9s ease-out both;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;''
+    animation-range: entry 0% cover 40%;
 }
 
 
