@@ -172,7 +172,9 @@ section {
 video {
     display: block;
     width: 100%;
-    height: auto;
+    height: auto;      
+    aspect-ratio: 16/9; 
+    object-fit: cover;  
 }
 
 /* --- 6. FOOTER (Identique à l'accueil) --- */
