@@ -1,12 +1,9 @@
-/* =========================================
-   FICHIER : catalog.css
-   ========================================= */
 
-/* --- 1. BASE & COULEURS (Identique à l'accueil) --- */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #48566a; /* Fond bleu-gris */
+    background: #48566a; 
     color: #222;
 }
 
@@ -14,7 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- 2. HEADER (Identique à l'accueil) --- */
+
 header {
     background: #9e9d9d; 
     color: white;
@@ -49,19 +46,19 @@ header nav a:hover {
     color: #0a7cff;
 }
 
-/* Style pour le lien actif sur cette page */
+
 header nav a.active-link {
     color: #0a7cff;
     border-bottom: 2px solid #0a7cff;
 }
 
-/* --- 3. SECTIONS & TITRES --- */
+
 section {
     padding: 60px 20px;
     text-align: center;
 }
 
-/* Intro spécifique au catalogue */
+
 .catalog-intro h2 {
     font-size: 40px;
     color: white;
@@ -75,10 +72,9 @@ section {
     margin: 0 auto;
 }
 
-/* --- 4. GRILLE DE PRODUITS --- */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cartes un peu plus larges */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     max-width: 1200px;
     margin: auto;
@@ -89,9 +85,9 @@ section {
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: left; /* Pour une meilleure lecture des descriptions */
+    text-align: left; 
     
-    /* Animation d'apparition */
+    
     opacity: 0;
     animation: slideInUp 0.8s ease-out both;
     animation-timeline: view();
@@ -100,7 +96,7 @@ section {
 
 .card img {
     width: 100%;
-    aspect-ratio: 4/3; /* Force toutes les images à la même taille */
+    aspect-ratio: 4/3; 
     object-fit: cover;
     border-radius: 10px;
 }
@@ -117,7 +113,6 @@ section {
     color: #444;
 }
 
-/* Prix (Spécifique Catalogue) */
 .price {
     font-size: 18px;
     color: #0a7cff;
@@ -127,7 +122,6 @@ section {
     border-top: 1px solid #ccc;
 }
 
-/* Bouton "Rent This" */
 .card-btn {
     display: block;
     width: 100%;
@@ -148,7 +142,6 @@ section {
     transform: translateY(-2px);
 }
 
-/* --- 5. SECTION VIDÉO --- */
 .video-container {
     max-width: 900px;
     margin: 0 auto;
@@ -191,7 +184,7 @@ footer a {
     text-decoration: none;
 }
 
-/* --- 7. RESPONSIVE (Mobile) --- */
+
 .menu-toggle {
     display: none;
     font-size: 26px;
@@ -227,7 +220,7 @@ footer a {
     }
 }
 
-/* --- 8. ANIMATIONS --- */
+
 @keyframes slideInUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
