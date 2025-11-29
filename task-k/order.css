@@ -1,4 +1,6 @@
-/* Reset et Base */
+/* =========================================
+   1. RESET ET BASE
+   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,20 +8,103 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #48566a; /* Gray-50 */
-    color: white; /* Gray-900 */
+    font-family: Arial, Helvetica, sans-serif; /* Police ajustée comme le 2ème code */
+    background-color: #48566a;
+    color: #222; /* Ajusté pour correspondre */
     line-height: 1.5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Utilitaires de mise en page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   2. HEADER (IDENTIQUE AU 2ÈME CODE)
+   ========================================= */
+.site-header {
+    background: #9e9d9d;
+    color: white;
+    /* On reprend le padding exact du 2ème code */
+    padding: 20px 40px; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Conteneur interne pour gérer l'alignement */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* On annule la max-width du container standard pour ce header 
+       afin qu'il prenne toute la largeur comme dans le 2ème code */
+    max-width: none; 
+    padding: 0;
+    margin: 0;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* Navigation Desktop */
+.main-nav {
+    display: flex;
+    gap: 25px; /* Espacement identique au margin-left: 25px du 2ème code */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 0; /* Reset du padding précédent */
+}
+
+.nav-link:hover {
+    color: #0a7cff;
+}
+
+.nav-link.active {
+    color: #0a7cff; /* Style du lien actif du 2ème code */
+    border-bottom: 2px solid #0a7cff;
+}
+
+/* Bouton Hamburger (Caché sur Desktop) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+}
+
+/* =========================================
+   3. CONTENU SPÉCIFIQUE (INTRO & FORMULAIRE)
+   ========================================= */
+
+/* Utilitaires */
 .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.text-red {
+    color: #ef4444;
 }
 
 .sr-only {
@@ -30,84 +115,10 @@ body {
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+    border: 0;
 }
 
-.text-red {
-    color: #ef4444;
-}
-
-/* Header */
-.site-header {
-    background: #9e9d9d;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-    position: relative; 
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    margin-left: 0px;
-    text-decoration: none;
-    letter-spacing: -0.025em;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    text-decoration: none;
-}
-
-
-.main-nav {
-    display: flex; 
-    flex-direction: row;
-    gap: 0.5rem;
-}
-
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 0.5rem 0.75rem;
-    transition: color 0.2s;
-}
-
-.nav-link:hover {
-    color: #0a7cff;
-}
-
-.nav-link.active {
-    color: white;
-    font-weight: 700;
-}
-
-/* Bouton Hamburger */
-.mobile-menu-btn {
-    display: none; 
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-}
-
+/* Section Intro */
 .intro-section {
     background-color: #48566a;
     color: white;
@@ -118,7 +129,6 @@ body {
 .intro-content {
     max-width: 48rem;
     margin: 0 auto;
-    color: white;
 }
 
 .page-title {
@@ -129,10 +139,9 @@ body {
 
 .page-subtitle {
     font-size: 1.125rem;
-    color: white;
 }
 
-/* Form Section */
+/* Formulaire */
 .form-section {
     padding: 2.5rem 1rem;
     max-width: 48rem;
@@ -144,8 +153,7 @@ body {
     background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 0.75rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border: 1px solid #f3f4f6;
 }
 
@@ -188,13 +196,7 @@ label {
     margin-bottom: 0.25rem;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
+input, select, textarea {
     display: block;
     width: 100%;
     border-radius: 0.375rem;
@@ -205,12 +207,22 @@ textarea {
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: 2px solid #000;
     outline-offset: 1px;
     border-color: #000;
+}
+
+/* Gestion des erreurs (pour JS) */
+.input-error {
+    border-color: #ef4444 !important;
+    outline-color: #ef4444 !important;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
 }
 
 .helper-text {
@@ -235,23 +247,20 @@ textarea:focus {
     width: 1rem;
     margin-top: 0.25rem;
     margin-right: 0.75rem;
-    border-radius: 0.25rem;
-    border: 1px solid #d1d5db;
     accent-color: #000;
 }
 
-/* Button */
 .btn-submit {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 1rem;
-    border: 1px solid transparent;
     border-radius: 0.375rem;
     font-size: 0.875rem;
     font-weight: 700;
     color: #ffffff;
     background-color: #000000;
+    border: none;
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -260,77 +269,70 @@ textarea:focus {
     background-color: #1f2937;
 }
 
-.disclaimer {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-top: 1rem;
-}
-
-/* Footer */
+/* =========================================
+   4. FOOTER (IDENTIQUE AU 2ÈME CODE)
+   ========================================= */
 .site-footer {
-    background-color: #000000;
-    margin-top: auto;
-    padding: 2rem 1rem;
+    margin-top: 50px;
+    background: #111;
+    color: #ccc;
+    padding: 30px;
+    text-align: center;
 }
 
 .footer-text {
-    text-align: center;
-    color: white;
-    font-size: 1rem;
+    color: #ccc;
 }
 
 .footer-link {
-    color: rgb(4, 24, 236);
+    color: #0a7cff;
     text-decoration: none;
 }
 
-/* Responsive  */
+/* =========================================
+   5. RESPONSIVE (LOGIQUE DU 2ÈME CODE)
+   ========================================= */
+@media (min-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .col-span-2 {
+        grid-column: span 2;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Permet au header de s'agrandir quand le menu s'ouvre */
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    /* Afficher le bouton burger */
     .mobile-menu-btn {
         display: block;
         margin-left: auto;
     }
 
-    .site-header .main-nav {
+    /* Configuration du menu mobile (caché par défaut) */
+    .main-nav {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #9e9d9d;
+        background: #9e9d9d; /* Même fond que le header */
         padding: 10px 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 999;
+        gap: 0; /* Reset du gap desktop */
     }
 
-    .site-header .main-nav.active {
+    /* Quand la classe .active est ajoutée par JS */
+    .main-nav.active {
         display: flex;
     }
 
-    .site-header .main-nav a {
+    /* Style des liens en mobile */
+    .nav-link {
         margin: 10px 0;
         text-align: center;
-    }
-}
-
-@media (min-width: 769px) {
-    .site-header .main-nav {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        position: static;
-        width: auto;
-        background: none;
-        padding: 0;
-    }
-
-    .mobile-menu-btn {
-        display: none;
-    }
-
-    .site-header .main-nav a {
-        margin: 0;
-        text-align: left;
+        display: block;
+        width: 100%;
     }
 }
