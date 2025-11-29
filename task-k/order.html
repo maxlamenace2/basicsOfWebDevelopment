@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Rental - BikeRental</title>
-    <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="order.css">
-    <script src="order.js"></script>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="site-header">
         <div class="container header-content">
-            <!-- Logo -->
+            
             <div class="logo-wrapper">
                 <a href="https://maxlamenace2.github.io/basicsOfWebDevelopment/task-i/index.html" class="logo">
                     BikeRental
                 </a>
             </div>
             
-            <!-- Desktop Navigation -->
+            
             <nav class="main-nav">
                 <a href="https://maxlamenace2.github.io/basicsOfWebDevelopment/task-i/index.html" class="nav-link">
                     Home
@@ -28,23 +25,23 @@
                 <a href="https://maxlamenace2.github.io/basicsOfWebDevelopment/task-j/catalog.html" class="nav-link">
                     Catalog
                 </a>
-                <!-- Active Link -->
-                <a href="#" class="nav-link active" aria-current="page">
+                
+                <a href="#" class="nav-link" aria-current="page">
                     Order Now
                 </a>
             </nav>
 
-            <!-- Mobile Menu Button -->
+            
             <button type="button" class="mobile-menu-btn" aria-label="Open menu">
                 ☰
             </button>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+   
     <main>
         
-        <!-- Intro Section -->
+        
         <section class="intro-section">
             <div class="intro-content">
                 <h1 class="page-title">Book Your Ride</h1>
@@ -55,29 +52,29 @@
             </div>
         </section>
 
-        <!-- Order Form Section -->
+        
         <section class="form-section">
-            <!-- Ajout de 'novalidate' pour utiliser notre JS personnalisé -->
+            
             <form action="#" method="POST" class="form-card" novalidate>
                 
-                <!-- Fieldset 1: Customer Information -->
+                
                 <fieldset>
                     <legend>Customer Details</legend>
                     
                     <div class="form-grid">
-                        <!-- Full Name -->
+                        
                         <div class="form-group col-span-2">
                             <label for="full-name">Full Name <span class="text-red">*</span></label>
                             <input type="text" name="full-name" id="full-name" autocomplete="name" required placeholder="John Doe">
                         </div>
 
-                        <!-- Email -->
+                       
                         <div class="form-group">
                             <label for="email">Email Address <span class="text-red">*</span></label>
                             <input type="email" name="email" id="email" autocomplete="email" required placeholder="john@example.com">
                         </div>
 
-                        <!-- Phone -->
+                        
                         <div class="form-group">
                             <label for="phone">Phone Number <span class="text-red">*</span></label>
                             <input type="tel" name="phone" id="phone" autocomplete="tel" required pattern="[0-9+\s-]{8,}" title="Please enter a valid phone number (min 8 digits)" placeholder="+1 234 567 890">
@@ -85,13 +82,13 @@
                     </div>
                 </fieldset>
 
-                <!-- Fieldset 2: Rental Details -->
+                
                 <fieldset>
                     <legend>Rental Configuration</legend>
                     
                     <div class="form-grid">
                         
-                        <!-- Bike Selection -->
+                        
                         <div class="form-group col-span-2">
                             <label for="bike-model">Select Bike Model <span class="text-red">*</span></label>
                             <select id="bike-model" name="bike-model" required>
@@ -106,19 +103,19 @@
                             <p class="helper-text">Unsure? Check our <a href="https://maxlamenace2.github.io/basicsOfWebDevelopment/task-j/catalog.html" target="_blank" class="helper-link">catalog page</a> for details.</p>
                         </div>
 
-                        <!-- Start Date -->
+                        
                         <div class="form-group">
                             <label for="start-date">Pick-up Date <span class="text-red">*</span></label>
                             <input type="date" name="start-date" id="start-date" required>
                         </div>
 
-                        <!-- Duration -->
+                       
                         <div class="form-group">
                             <label for="duration">Duration (Days) <span class="text-red">*</span></label>
                             <input type="number" name="duration" id="duration" min="1" max="30" value="1" required>
                         </div>
 
-                        <!-- Quantity -->
+                        
                         <div class="form-group col-span-2">
                             <label for="quantity">Quantity</label>
                             <input type="number" name="quantity" id="quantity" min="1" max="10" value="1" style="width: 33%;">
@@ -126,18 +123,18 @@
                     </div>
                 </fieldset>
 
-                <!-- Fieldset 3: Additional Info -->
+             
                 <fieldset>
                     <legend class="sr-only">Additional Information</legend>
                     
                     <div class="form-grid col-span-2">
-                        <!-- Message -->
+                        
                         <div class="form-group col-span-2">
                             <label for="comments">Special Requests / Message</label>
                             <textarea id="comments" name="comments" rows="4" placeholder="Do you need a helmet? Child seat? Let us know here."></textarea>
                         </div>
 
-                        <!-- Checkboxes -->
+                        
                         <div class="col-span-2">
                             <div class="checkbox-group">
                                 <input id="newsletter" name="newsletter" type="checkbox">
@@ -158,21 +155,18 @@
                     </div>
                 </fieldset>
 
-                <!-- Submit Button -->
+                
                 <div style="padding-top: 1rem;">
                     <button type="submit" class="btn-submit">
                         Send Rental Request
                     </button>
-                    <p class="disclaimer">
-                        This is a demo form. No actual payment is processed.
-                    </p>
                 </div>
 
             </form>
         </section>
     </main>
 
-    <!-- FOOTER -->
+    
     <footer class="site-footer">
         <div class="container">
             <p class="footer-text">
@@ -184,7 +178,7 @@
         </div>
     </footer>
 
-    <!-- Lien vers le fichier JS externe -->
+    
     <script src="order.js"></script>
 </body>
 </html>
