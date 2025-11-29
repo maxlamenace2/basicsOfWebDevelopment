@@ -169,6 +169,18 @@ video {
     aspect-ratio: 16/9; 
     object-fit: cover;  
 }
+.exemple{
+    display: flex;
+    justify-content: center;
+}
+
+.exemple img {
+    width: 200px;   /* taille de l’image */
+    height: auto;   /* garde les proportions */
+    border-radius: 8px; /* optionnel : coins arrondis */
+    
+}
+
 
 /* --- 6. FOOTER (Identique à l'accueil) --- */
 footer {
