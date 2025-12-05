@@ -35,6 +35,12 @@ header nav a {
 header nav a:hover {
     color: #0a7cff;
 }
+
+header nav a.active-link {
+    color: #0a7cff;
+    border-bottom: 2px solid #0a7cff;
+}
+
 .hero {
     position: relative;
     display: flex;

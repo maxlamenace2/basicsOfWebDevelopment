@@ -24,72 +24,83 @@ html {
 /* =========================================
    2. HEADER (IDENTIQUE AU 2ÈME CODE)
    ========================================= */
-.site-header {
-    background: #9e9d9d;
+/* =========================================
+   2. HEADER (UNIFIÉ)
+   ========================================= */
+header {
+    background: #9e9d9d; 
     color: white;
-    /* On reprend le padding exact du 2ème code */
-    padding: 20px 40px; 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* Conteneur interne pour gérer l'alignement */
-.header-content {
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    /* On annule la max-width du container standard pour ce header 
-       afin qu'il prenne toute la largeur comme dans le 2ème code */
-    max-width: none; 
-    padding: 0;
-    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Logo */
-.logo {
+header h1 {
+    margin: 0;
     font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    margin: 0;
 }
 
-/* Navigation Desktop */
-.main-nav {
+header nav {
     display: flex;
-    gap: 25px; /* Espacement identique au margin-left: 25px du 2ème code */
 }
 
-.nav-link {
+header nav a {
     color: white;
     text-decoration: none;
+    margin-left: 25px;
     font-size: 16px;
     font-weight: bold;
     transition: color 0.3s;
-    padding: 0; /* Reset du padding précédent */
 }
 
-.nav-link:hover {
+header nav a:hover {
     color: #0a7cff;
 }
 
-.nav-link.active {
-    color: #0a7cff; /* Style du lien actif du 2ème code */
+header nav a.active-link {
+    color: #0a7cff;
     border-bottom: 2px solid #0a7cff;
 }
 
-/* Bouton Hamburger (Caché sur Desktop) */
-.mobile-menu-btn {
+/* Bouton Hamburger */
+.menu-toggle {
     display: none;
-    background: none;
-    border: none;
     font-size: 26px;
     cursor: pointer;
     color: white;
-    padding: 0;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #9e9d9d;
+        padding: 10px 0;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
 /* =========================================
